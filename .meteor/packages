@@ -3,4 +3,3 @@ iron:router
 twbs:bootstrap
 fortawesome:fontawesome
 insecure
-autopublish
