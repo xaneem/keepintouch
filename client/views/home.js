@@ -27,8 +27,8 @@ Template.home.helpers({
 
 });
 
-Template.home.events({
-  'click button': function(event, template) {
-    Session.set('myAppVariable', Math.floor(Math.random() * 11));
+Template.contact.events({
+  'click.user-icon': function(event, template) {
+    alert("Hello. I'm "+template.data.name);
   }
 });
