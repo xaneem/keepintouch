@@ -4,34 +4,35 @@ Template.navbar.helpers({
   }
 });
 
-
 Template.home.helpers({
   name: function() {
     return "John Doe";
   },
 
   contacts: function() {
-    console.log(People.find({}));
-
-      return People.find({});
-/*    var people = [];
-
-    var person = {
-        name: "John Doe",
-        phone : "+91-9811-245-353",
-        email : "johndoe@example.com"
-      };
-
-    for (var i = 0; i < 50; i++) {
-      people.push(person);
-    };
-    return people;*/
+    return People.find({});
   }
 
 });
 
-Template.contact.events({
-  'click.user-icon': function(event, template) {
-    alert("Hello. I'm "+template.data.name);
+Template.home.events({
+  'submit.new-contact' : function(event) {
+
+    event.preventDefault();
+
+    var name = event.target.contactName.value;
+    var phone = event.target.contactPhone.value;
+    var email = event.target.contactEmail.value;
+
+    People.insert({
+      name: name,
+      phone:phone,
+      email:email
+    });
+
+    event.target.contactName.value = "";
+    event.target.contactPhone.value = "";
+    event.target.contactEmail.value = "";
   }
+
 });

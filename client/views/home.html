@@ -4,28 +4,28 @@
   <div class="container">
   	<div class="row">
   		<div class="col-md-6 col-md-offset-3">
-	  		<h2>Hello, {{name}}.</h2>
+       <h2>Hello, {{name}}.</h2>
 
-	  		<input type="text" name="" class="form-control" placeholder="Whom would you like to get in touch with?">
+       <input type="text" name="" class="form-control" placeholder="Whom would you like to get in touch with?">
 
-<h1>Add New</h1>
+       <h1>Add New</h1>
 
-     <form class="new-contact">
-       <input type="text" class="form-control" name="contact-name" placeholder="Name" />
-         <input type="text" class="form-control" name="contact-phone" placeholder="Phone" />
-         <input type="text" class="form-control" name="contact-email" placeholder="Email" />
+       <form class="new-contact">
+        <input type="text" class="form-control" name="contactName" placeholder="Name" />
+        <input type="text" class="form-control" name="contactPhone" placeholder="Phone" />
+        <input type="email" class="form-control" name="contactEmail" placeholder="Email" />
+        <input type="submit" class="btn btn-success" />
       </form>
 
 
-
-  			<div class="row">
-  				{{#each contacts}}
-  					{{>contact }}
-  				{{/each}}
-  			</div>
-  		</div>
-  	</div>
+      <div class="row">
+        {{#each contacts}}
+        {{>contact }}
+        {{/each}}
+      </div>
+    </div>
   </div>
+</div>
 </template>
 
 <template name="contact">
