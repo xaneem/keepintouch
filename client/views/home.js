@@ -18,7 +18,7 @@ Template.home.helpers({
 Template.home.events({
 
   'click.delete-contact' : function(event) {
-    People.remove(this._id);
+    Meteor.call("deleteContact",this._id);
   },
 
 
@@ -34,11 +34,7 @@ Template.home.events({
     var phone = event.target.contactPhone.value;
     var email = event.target.contactEmail.value;
 
-    People.insert({
-      name: name,
-      phone:phone,
-      email:email
-    });
+    Meteor.call("addContact",name,phone,email);
 
     event.target.contactName.value = "";
     event.target.contactPhone.value = "";

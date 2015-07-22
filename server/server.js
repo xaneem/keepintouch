@@ -9,3 +9,23 @@ if(People.find().count() === 0) {
     });
   });
 }
+
+
+
+Meteor.methods({
+	addContact: function (name,phone,email) {
+
+
+    People.insert({
+      name: name,
+      phone:phone,
+      email:email
+    });
+
+	},
+
+	deleteContact: function(contactId){
+	People.remove(contactId);
+	}
+
+});
