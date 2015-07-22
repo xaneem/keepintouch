@@ -4,14 +4,17 @@ Template.navbar.helpers({
   }
 });
 
+
 Template.home.helpers({
   name: function() {
     return "John Doe";
   },
 
   contacts: function() {
+    console.log(People.find({}));
 
-    var people = [];
+      return People.find({});
+/*    var people = [];
 
     var person = {
         name: "John Doe",
@@ -22,7 +25,7 @@ Template.home.helpers({
     for (var i = 0; i < 50; i++) {
       people.push(person);
     };
-    return people;
+    return people;*/
   }
 
 });

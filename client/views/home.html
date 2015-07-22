@@ -8,6 +8,16 @@
 
 	  		<input type="text" name="" class="form-control" placeholder="Whom would you like to get in touch with?">
 
+<h1>Add New</h1>
+
+     <form class="new-contact">
+       <input type="text" class="form-control" name="contact-name" placeholder="Name" />
+         <input type="text" class="form-control" name="contact-phone" placeholder="Phone" />
+         <input type="text" class="form-control" name="contact-email" placeholder="Email" />
+      </form>
+
+
+
   			<div class="row">
   				{{#each contacts}}
   					{{>contact }}
@@ -21,7 +31,7 @@
 <template name="contact">
 	<div class="col-md-6">
 		<div class="contact-item">
-      <span class="fa fa-4x fa-user" aria-hidden="true"></span>
+      <span class="fa fa-4x fa-user user-icon" aria-hidden="true"></span>
 			<h3>{{name}}</h3>
       <h4>{{phone}}</h4>
       <h4>{{email}}</h4>
