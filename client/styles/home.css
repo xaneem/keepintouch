@@ -31,3 +31,7 @@
 	outline: none;
 
 }
+
+.input-error{
+	border: 2px solid #E11717 !important;
+}

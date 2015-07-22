@@ -1,18 +1,7 @@
-Template.navbar.helpers({
-  name: function() {
-    return "John Doe";
-  }
-});
-
 Template.home.helpers({
-  name: function() {
-    return "John Doe";
-  },
-
   contacts: function() {
     return People.find({});
   }
-
 });
 
 Template.home.events({
