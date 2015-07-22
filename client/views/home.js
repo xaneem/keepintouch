@@ -16,6 +16,11 @@ Template.home.helpers({
 });
 
 Template.home.events({
+
+  'keyup #contact-search' : function(event) {
+    Session.set("contact-search", event.target.value);
+  },
+
   'submit.new-contact' : function(event) {
 
     event.preventDefault();
