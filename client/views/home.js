@@ -17,7 +17,7 @@ Template.home.helpers({
 
 Template.home.events({
 
-  'click.delete-contact' : function(event) {
+  'click .delete-contact' : function(event) {
     Meteor.call("deleteContact",this._id);
   },
 
@@ -26,7 +26,7 @@ Template.home.events({
     Session.set("contact-search", event.target.value);
   },
 
-  'submit.new-contact' : function(event) {
+  'submit .new-contact' : function(event) {
 
     event.preventDefault();
 
