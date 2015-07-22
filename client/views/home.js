@@ -17,6 +17,11 @@ Template.home.helpers({
 
 Template.home.events({
 
+  'click.delete-contact' : function(event) {
+    People.remove(this._id);
+  },
+
+
   'keyup #contact-search' : function(event) {
     Session.set("contact-search", event.target.value);
   },
