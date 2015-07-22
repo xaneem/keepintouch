@@ -1,51 +1,57 @@
 <template name="home">
-  {{>navbar}}
+	{{>navbar}}
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Hello, {{name}}.</h2>
-      </div>
-      <div class="col-md-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Hello, {{name}}.</h2>
+			</div>
+			<div class="col-md-3">
 
-        <div class="well">
-          <form class="new-contact">
-            <div class="form-group">
-              <input type="text" class="form-control" name="contactName" placeholder="Name" />
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="contactPhone" placeholder="Phone" />
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" name="contactEmail" placeholder="Email" />
-            </div>
-            <button type="submit" class="btn btn-success btn-block"><span class="fa fa-plus" aria-hidden="true"></span> Add Contact</button>
-          </form>
-        </div>
-      </div>
-      <div class="col-md-9">
+				<div class="well">
+					<form class="new-contact">
+						<div class="form-group">
+							<input type="text" class="form-control" name="contactName" placeholder="Name" />
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="contactPhone" placeholder="Phone" />
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" name="contactEmail" placeholder="Email" />
+						</div>
+						<button type="submit" class="btn btn-success btn-block"><span class="fa fa-plus" aria-hidden="true"></span> Add Contact</button>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-9">
 
-        <input type="text" id="contact-search" class="form-control" placeholder="Whom would you like to get in touch with?">
+				<input type="text" id="contact-search" class="form-control" placeholder="Whom would you like to get in touch with?">
 
 
 
-        <div class="row">
-          {{#each contacts}}
-          {{>contact }}
-          {{/each}}
-        </div>
-      </div>
-    </div>
-  </div>
+				<div class="row">
+					{{#each contacts}}
+					{{>contact }}
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <template name="contact">
-  <div class="col-md-4">
-    <div class="contact-item">
-      <span class="fa fa-4x fa-user user-icon" aria-hidden="true"></span>
-      <h3>{{name}}</h3>
-      <h4>{{phone}}</h4>
-      <h4>{{email}}</h4>
-    </div>
-  </div>
+	<div class="col-md-4">
+		<div class="contact-item">
+			<div class="pull-right">
+				<span class="fa fa-times delete-contact" aria-hidden="true"></span>
+			</div>
+
+			<span class="fa fa-4x fa-user user-icon" aria-hidden="true"></span>
+			<h3>{{name}}</h3>
+			<h4>{{phone}}</h4>
+			<h4>{{email}}</h4>
+
+
+		</div>
+	</div>
 </template>

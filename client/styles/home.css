@@ -3,3 +3,11 @@
 	border: 1px solid #F7F7F7;
 	padding: 20px;
 }
+
+.delete-contact{
+	cursor: pointer;
+}
+
+.delete-contact:hover{
+	opacity: 0.7;
+}
