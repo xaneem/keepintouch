@@ -1,17 +1,20 @@
 Template.signup.events({
-	'submit #login-form': function(event, template){
+	'submit #signup-form': function(event, template){
 		event.preventDefault();
 
-		var username = template.find('#login-username').value,
-			password = template.find('#login-password').value;
+		var userEmail = template.find('#signup-email').value,
+			userName = template.find('#signup-username').value
+			password = template.find('#signup-password').value;
 
-			Meteor.loginWithPassword(username, password, function(error){
+			Accounts.createUser({username: userName,
+        email:    userEmail,
+        password: password}, function(error){
 				if(error){
 					alert(error);
-					template.find('#login-username').addClass('input-error');
-					template.find('#login-password').addClass('input-error');
+					template.find('#signup-username').addClass('input-error');
+					template.find('#signup-password').addClass('input-error');
 				}else{
-					alert('success');
+					Router.go('/');
 				}
 			});
 

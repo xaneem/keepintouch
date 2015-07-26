@@ -1,10 +1,26 @@
 Template.home.helpers({
   contacts: function() {
     return People.find({});
+  },
+   uname: function() {
+    return Meteor.user().username ;
+
   }
 });
 
 Template.home.events({
+
+  'click #logout' : function (event){
+    console.log (event);
+    Meteor.logout(function(error){
+        if(error){
+          alert(error);
+             }else{
+          
+          Router.go('/login');
+        }
+      });
+  },
 
   'click .delete-contact' : function(event) {
     Meteor.call("deleteContact",this._id);
@@ -66,3 +82,4 @@ Template.home.events({
   }
 
 });
+

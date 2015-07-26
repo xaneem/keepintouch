@@ -10,6 +10,10 @@ Router.route('/signup', 'signup');
 
 MainController = RouteController.extend({
   action: function() {
-  	  this.render('home');
+  	if(Meteor.userId() != null)
+  	  	this.render('home');
+  	else
+  		this.render('login');
   }
 });
+

@@ -1,4 +1,7 @@
 Template.login.events({
+	'click #signUp':function(event){
+		Router.go('/signup');
+	},
 	'submit #login-form': function(event, template){
 		event.preventDefault();
 
@@ -11,7 +14,8 @@ Template.login.events({
 					template.find('#login-username').addClass('input-error');
 					template.find('#login-password').addClass('input-error');
 				}else{
-					alert('success');
+					
+					Router.go('/');
 				}
 			});
 
